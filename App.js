@@ -1,18 +1,20 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { Image, StyleSheet, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 export default function App() {
   return (
-    <SafeAreaView style={styles.container}>
-      <StatusBar style='inverted'/>
+    <SafeAreaView style={styles.container} edges={["top"]}>
+      <StatusBar style='light'/>
 
 
       <Text style={styles.title}>Me deixa quieto, eu não quero mexer com front-end!</Text>
 
       <View style={styles.main}>
-        <Image source={{ uri: "https://github.com/CaioQ.png" }} style={styles.foto}>
-        </Image>
+        <Image 
+          source={{ uri: "https://github.com/CaioQC.png" }} 
+          style={styles.avatar}
+        />
       </View>
     </SafeAreaView>
   );
@@ -26,10 +28,12 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 40,
+    fontWeight: "bold",
     color: "#fff"
   },
   main: {
     flex: 1, //ocupa todo o espaço disponível
+    alignItems: "center",
     width: "100%",
     backgroundColor: "#121214"
   },
